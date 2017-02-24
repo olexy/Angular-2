@@ -8,9 +8,11 @@ import { RecipeItemComponent } from './recipe-item.component'
   templateUrl: './recipe-list.component.html'
 })
 export class RecipeListComponent implements OnInit {
-  recipes: Recipe[] = []; //declaring recipe as class array type
+  recipes: Recipe[] = [
+    new Recipe('Schnitzel', 'Very tasty', 'http://www.westridgebeef.com/wp-content/uploads/2013/09/Recipe-icon-3.png', []),
+    new Recipe('AnotherRecipe', 'Good tastes', 'https://assets.materialup.com/uploads/710e2dd7-6b50-43a0-a3f5-5167a7e23d07/teaser.png', [])
+  ]; //declaring recipe as class array type
   @Output() recipeSelected = new EventEmitter<Recipe>();
-  recipe = new Recipe('Dummy', 'Dummy Description', 'http://t15.deviantart.net/nR4UjG9pf5IPWebDjA4msPdlmkg=/fit-in/700x350/filters:fixed_height(100,100):origin()/pre12/8174/th/pre/i/2014/357/2/f/slappy_the_dummy_by_ichaelbarnes-d8ayjb4.jpg')
 
   constructor() { }
 
