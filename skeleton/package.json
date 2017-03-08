@@ -1,0 +1,42 @@
+{
+    "name": "angular2-skeleton",
+    "version": "1.0.0",
+    "description": "L3xy's Angular2 Skeleton project",
+    "scripts":{
+        "start": "tsc && concurrently \"tsc -w\" \"lite-server\"",  //this run with npm command
+        "lite": "lite-server",    //the development environment server
+        "tsc": "tsc",   //tsc means typscript compiler
+        "tsc:w": "tsc -w"   //tsc -w watches project files
+    },
+    "license": "UNLICENSED",    //to avoid on installing dependencies
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "dependencies": {
+        "@angular/common": "2.1.2",
+        "@angular/compiler": "2.1.2",
+        "@angular/core": "2.1.2",
+        "@angular/form": "2.1.2",
+        "@angular/http": "2.1.2",
+        "@angular/platform-browser": "2.1.2",
+        "@angular/platform-browser-dynamic": "2.1.2",
+        "@angular/router": "3.1.2",
+        "@angular/upgrade": "2.1.2",
+        "angular-in-memory-web-api": "0.1.13",
+        "bootstrap": "4.0.0-alpha.5",
+        "core.js": "2.4.1",
+        "reflect-metadata": "0.1.8",
+        "rxjs": "5.0.0-rc.1",
+        "system.js": "0.19.40",
+        "zone.js": "0.6.26"   
+    },
+    "devDependencies": {                //dependencies needed only for development env.
+        "@types/core-js": "0.9.34",
+        "@types/node": "6.0.46",
+        "concurrently": "3.1.0",
+        "lite-server": "2.2.2",
+        "typscript": "2.0.6"
+        
+    }
+}
