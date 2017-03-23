@@ -11,3 +11,7 @@
 .card-footer {
     text-align: right;
 }
+i {
+    color: #cc0000;
+    padding-right: .5rem;
+}
