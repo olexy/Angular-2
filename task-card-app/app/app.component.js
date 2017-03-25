@@ -9,17 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var task_1 = require('./model/task');
 var AppComponent = (function () {
     function AppComponent() {
         //create task1 object of the Task class imported above
-        this.task1 = {
-            content: "Learn to code",
-            completed: false
-        };
-        this.task2 = {
-            content: "Another Task",
-            completed: true
-        };
+        this.tasks = [
+            new task_1.Task("Buy a monkey", false),
+            new task_1.Task("Walk the dog", false)
+        ];
     }
     AppComponent = __decorate([
         core_1.Component({

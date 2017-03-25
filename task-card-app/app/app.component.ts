@@ -10,13 +10,14 @@ import { Task } from './model/task'
 
 export class AppComponent {
 //create task1 object of the Task class imported above
-    task1: Task = {
-        content: "Learn to code",
-        completed: false
-    }
-
-    task2: Task = {
-        content: "Another Task",
-        completed: true
-    }
+   private tasks = [
+       new Task(
+           "Buy a monkey",
+           false
+       ),
+       new Task(
+           "Walk the dog",
+           false
+       )
+   ]
 }
