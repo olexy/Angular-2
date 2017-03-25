@@ -11,6 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
+        //create task1 object of the Task class imported above
+        this.task1 = {
+            content: "Learn to code",
+            completed: false
+        };
+        this.task2 = {
+            content: "Another Task",
+            completed: true
+        };
     }
     AppComponent = __decorate([
         core_1.Component({
