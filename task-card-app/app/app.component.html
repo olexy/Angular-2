@@ -1,3 +1,4 @@
 <div class="container">
-    <app-card [task]="task1"></app-card>        <!--task]="task1" is input property-->
+    <app-card *ngFor="let task of tasks" [task]="task"></app-card>        
+    <!--task]="task" is input property-->
 </div>
