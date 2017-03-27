@@ -1,4 +1,17 @@
 <div class="container">
-    <app-card *ngFor="let task of tasks" [task]="task"></app-card>        
-    <!--task]="task" is input property-->
+    <div class="row">
+        <div class="col-md-6 offset-md-3"> <!--takes hald of the parent's 12 col starting from 3rd-->
+            <form class="form-inline">      <!--"form-inline means forms won't' stack on each other"-->
+                <div class="form-group">
+                    <label for="content-field" class="sr-only"></label> <!--"sr-only means to be visible to screen reader only"-->
+                    <input type="text" class="form-control" placeholder="Enter a task...">                
+                </div>  
+                <button class="btm btn-primary">Add Task</button>    
+            </form>
+        </div>
+    </div>
+    <div class="class row">
+        <app-card *ngFor="let task of tasks" [task]="task"></app-card>       <!--task]="task" is input property for the card component-->
+    </div>
+    
 </div>
