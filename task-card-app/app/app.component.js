@@ -12,13 +12,17 @@ var core_1 = require('@angular/core');
 var task_1 = require('./model/task');
 var AppComponent = (function () {
     function AppComponent() {
-        //create task1 object of the Task class imported above
+        //create tasks object of the Task class imported above
         this.tasks = [
             new task_1.Task("Buy a monkey", false),
             new task_1.Task("Walk the dog", false)
         ];
         this.currentTask = new task_1.Task(null, false); //null, false is to populate the new task cos the feidl is required
     }
+    AppComponent.prototype.addTask = function () {
+        var taskToAdd = new task_1.Task(this.currentTask.content, this.currentTask.completed); //use this keyword to refrence the currentTask obj above
+        this.tasks.push(taskToAdd); //use this keyword to refrence the task array above
+    };
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

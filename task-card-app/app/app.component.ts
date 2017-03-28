@@ -10,7 +10,7 @@ import { Task } from './model/task'
 })
 
 export class AppComponent {
-//create task1 object of the Task class imported above
+//create tasks object of the Task class imported above
    private tasks = [
        new Task(
            "Buy a monkey",
@@ -22,5 +22,10 @@ export class AppComponent {
        )
    ]
    private currentTask = new Task(null, false); //null, false is to populate the new task cos the feidl is required
+   
+   addTask() {
+       let taskToAdd = new Task(this.currentTask.content, this.currentTask.completed); //use this keyword to refrence the currentTask obj above
+       this.tasks.push(taskToAdd);                   //use this keyword to refrence the task array above
+   }  
    
 }
