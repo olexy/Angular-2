@@ -4,9 +4,10 @@
             <form class="form-inline">      <!--"form-inline means forms won't' stack on each other"-->
                 <div class="form-group">
                     <label for="content-field" class="sr-only"></label> <!--"sr-only means to be visible to screen reader only"-->
-                    <input type="text" class="form-control" placeholder="Enter a task...">                
+                    <input type="text" class="form-control" placeholder="Enter a task..." [(ngModel)]="currentTask.content" name="content">  <!--"[(ngMode)] is used for two-way data binding within a form"-->              
                 </div>  
-                <button class="btn btn-primary"><i class="fa fa-tasks" aria-hidden="true"></i>Add Task</button>   
+                <button class="btn btn-primary"><i class="fa fa-tasks" aria-hidden="true"></i>Add Task</button>
+                <!--Content: {{ currentTask.content }}   "Testing two-way data binding"-->
             </form>
         </div>
     </div>

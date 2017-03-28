@@ -21,4 +21,6 @@ export class AppComponent {
            false
        )
    ]
+   private currentTask = new Task(null, false); //null, false is to populate the new task cos the feidl is required
+   
 }

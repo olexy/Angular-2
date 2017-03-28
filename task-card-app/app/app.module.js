@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component'); //importing the root component
 var card_component_1 = require('./card/card.component'); //importing the card component
 var AppModule = (function () {
@@ -18,7 +19,10 @@ var AppModule = (function () {
     AppModule = __decorate([
         //importing the card component
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
+            imports: [
+                platform_browser_1.BrowserModule,
+                forms_1.FormsModule
+            ],
             declarations: [
                 app_component_1.AppComponent,
                 card_component_1.CardComponent
