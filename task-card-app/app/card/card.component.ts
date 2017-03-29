@@ -9,5 +9,5 @@ import { Task } from '../model/task';   //import the class
     styleUrls: [ 'card.component.css']
 })
 export class CardComponent{ 
-    @Input() task: Task;        //@Input() is to be able to pass data into the property from mian (app) component
+    @Input() task: Task;        //@Input() is to be able to pass data from the property from main (app) component
 }
