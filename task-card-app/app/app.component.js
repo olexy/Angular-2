@@ -22,6 +22,7 @@ var AppComponent = (function () {
     AppComponent.prototype.addTask = function () {
         var taskToAdd = new task_1.Task(this.currentTask.content, this.currentTask.completed); //use this keyword to refrence the currentTask obj above
         this.tasks.push(taskToAdd); //use this keyword to refrence the task array above
+        this.currentTask.content = null;
     };
     AppComponent = __decorate([
         core_1.Component({

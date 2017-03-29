@@ -26,6 +26,7 @@ export class AppComponent {
    addTask() {
        let taskToAdd = new Task(this.currentTask.content, this.currentTask.completed); //use this keyword to refrence the currentTask obj above
        this.tasks.push(taskToAdd);                   //use this keyword to refrence the task array above
+       this.currentTask.content = null;
    }  
    
 }
