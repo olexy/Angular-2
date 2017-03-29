@@ -1,12 +1,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3"> <!--takes hald of the parent's 12 col starting from 3rd-->
-            <form class="form-inline" (ngSubmit)="addTask()">      <!--"form-inline means forms won't' stack on each other"// ()= is event binding-->
+            <form class="form-inline" (ngSubmit)="addTask()" #taskForm="ngForm">      <!--"form-inline means forms won't' stack on each other"// ()= is event binding-->
                 <div class="form-group">
                     <label for="content-field" class="sr-only"></label> <!--"sr-only means to be visible to screen reader only"-->
-                    <input type="text" class="form-control" placeholder="Enter a task..." [(ngModel)]="currentTask.content" name="content">  <!--"[(ngModel)] is used for two-way data binding within a form"-->              
+                    <input type="text" class="form-control" required placeholder="Enter a task..." [(ngModel)]="currentTask.content" name="content">  <!--"[(ngModel)] is used for two-way data binding within a form"-->              
                 </div>  
-                <button type="submit" class="btn btn-primary"><i class="fa fa-tasks" aria-hidden="true"></i>Add Task</button>
+                <button type="submit" class="btn btn-primary" [disabled]="taskForm.form.invalid"><i class="fa fa-tasks" aria-hidden="true"></i>Add Task</button>    <!--[disabled]="taskForm.form.invalid" dssable the button cos the form is dissabled until text is entered-->
                 <!--Content: {{ currentTask.content }}   "Testing two-way data binding"-->
             </form>
         </div>
