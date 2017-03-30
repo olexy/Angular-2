@@ -13,10 +13,7 @@ var task_1 = require('./model/task');
 var AppComponent = (function () {
     function AppComponent() {
         //create tasks object of the Task class imported above
-        this.tasks = [
-            new task_1.Task("Buy a monkey", false),
-            new task_1.Task("Walk the dog", false)
-        ];
+        this.tasks = [];
         this.currentTask = new task_1.Task(null, false); //null, false is to populate the new task cos the feidl is required
     }
     AppComponent.prototype.addTask = function () {
