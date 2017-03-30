@@ -1,11 +1,10 @@
 <div class="col-sm-3">
-    <div class="card" (click)="statusToggle()"> <!--Event binding with (click)="statusToggle()" -->
+    <div class="card" (click)="statusToggle()" [class.completed]="task.completed"> <!--Event binding with (click)="statusToggle()" -->
         <div class="card-block">
             <p>{{ task.content }}</p>
          </div>
         <div class="card-footer">
             <i class="fa fa-times" aria-hidden="true"></i>{{ task.completed}}
         </div> 
-        Completed: {{ task.completed }}      
     </div>
 </div>
