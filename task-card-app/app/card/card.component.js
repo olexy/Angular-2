@@ -13,6 +13,9 @@ var task_1 = require('../model/task'); //import the class
 var CardComponent = (function () {
     function CardComponent() {
     }
+    CardComponent.prototype.statusToggle = function () {
+        this.task.completed = !this.task.completed; //set 'task completed' to what its not currently is
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', task_1.Task)
