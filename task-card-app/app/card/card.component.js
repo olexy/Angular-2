@@ -8,29 +8,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var task_1 = require('../model/task'); //import the class
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var task_1 = require("../model/task"); //import the class
 var CardComponent = (function () {
     function CardComponent() {
     }
     CardComponent.prototype.statusToggle = function () {
         this.task.completed = !this.task.completed; //set 'task completed' to what its not currently is
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', task_1.Task)
-    ], CardComponent.prototype, "task", void 0);
-    CardComponent = __decorate([
-        //import the class
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'app-card',
-            templateUrl: 'card.component.html',
-            styleUrls: ['card.component.css']
-        }), 
-        __metadata('design:paramtypes', [])
-    ], CardComponent);
     return CardComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", task_1.Task)
+], CardComponent.prototype, "task", void 0);
+CardComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'app-card',
+        templateUrl: 'card.component.html',
+        styleUrls: ['card.component.css']
+    })
+], CardComponent);
 exports.CardComponent = CardComponent;
 //# sourceMappingURL=card.component.js.map

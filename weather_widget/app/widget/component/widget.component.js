@@ -7,19 +7,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./app.component");
-var AppModule = (function () {
-    function AppModule() {
+var WeatherComponent = (function () {
+    function WeatherComponent() {
     }
-    return AppModule;
+    return WeatherComponent;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent],
-        bootstrap: [app_component_1.AppComponent] //the starting point of the app to load the component
+WeatherComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'widget',
+        templateUrl: 'widget.component.html',
+        styleUrls: ['widget.component.css']
     })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], WeatherComponent);
+exports.WeatherComponent = WeatherComponent;
+//# sourceMappingURL=widget.component.js.map

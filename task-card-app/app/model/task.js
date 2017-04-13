@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Task = (function () {
     //tells us what field we need to initialise an object of this class with
     function Task(content, completed) {

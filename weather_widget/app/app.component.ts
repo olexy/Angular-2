@@ -5,11 +5,9 @@ import { Component } from '@angular/core';
     template: `
         <div class="container">
             <div class="col-xs-3">
-                <weather-widget></weather-widget>
+                <widget></widget>
             </div>
-        </div>
-    
-    `
+        </div>`
 })
 
 export class AppComponent {
