@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { FORECAST_KEY, FORECAST_ROOT } from '../constants/constants';
+
 @Injectable()       //this means the service can have dependency injected into it
 export class WeatherService{ 
     getCurrentLocation(): [number,number] {         //get user location based on browsers geolocation API
