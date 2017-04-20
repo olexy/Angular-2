@@ -11,7 +11,8 @@ import { WeatherService } from '../service/widget.service'
 })
 
 export class WeatherComponent{
-    constructor(private service: WeatherService){
+    constructor(private service: WeatherService){               //constructor is used to create an instance of the component
+        this.service.getCurrentLocation();     
         
     }
     

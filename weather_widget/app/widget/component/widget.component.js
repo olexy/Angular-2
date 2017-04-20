@@ -14,6 +14,7 @@ var widget_service_1 = require("../service/widget.service");
 var WeatherComponent = (function () {
     function WeatherComponent(service) {
         this.service = service;
+        this.service.getCurrentLocation();
     }
     return WeatherComponent;
 }());
