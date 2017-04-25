@@ -15,6 +15,8 @@ var WeatherComponent = (function () {
     function WeatherComponent(service) {
         this.service = service;
         this.service.getCurrentLocation();
+        this.service.getCurrentWeather(0, 0) //require subscription since its an observable method
+            .subscribe(function (weather) { return console.log(weather); }, function (err) { return console.error(err); });
     }
     return WeatherComponent;
 }());
