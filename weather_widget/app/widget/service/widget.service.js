@@ -21,13 +21,17 @@ var WeatherService = (function () {
     } //the instance of the json library is created with the instance of the service  
     WeatherService.prototype.getCurrentLocation = function () {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (pos) {
-                console.log("Position: ", pos.coords.latitude, ",", pos.coords.longitude); //TODO: REMOVE
-            }, function (err) { return console.error("Unable to get the position - ", err); }); //if cannot get location
+            return Observable_1.Observable.create(function (observer) {
+                navigator.geolocation.getCurrentPosition(function (pos) {
+                    observer.next(pos);
+                }),
+                    function (err) {
+                        return Observable_1.Observable.throw(err); //if cannot get location
+                    };
+            });
         }
         else {
-            console.error("Geolocation is not available");
-            return [0, 0];
+            return Observable_1.Observable.throw("Geolocation is not available");
         }
     };
     WeatherService.prototype.getCurrentWeather = function (lat, long) {

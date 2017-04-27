@@ -10,15 +10,18 @@ import { FORECAST_KEY, FORECAST_ROOT } from '../constants/constants';
 export class WeatherService{ 
 
     constructor(private jsonp: Jsonp){ } //the instance of the json library is created with the instance of the service  
-    getCurrentLocation(): [number,number] {         //get user location based on browsers geolocation API
+    getCurrentLocation(): Observable<any> {         //get user location based on browsers geolocation API
         if(navigator.geolocation) { 
-            navigator.geolocation.getCurrentPosition(pos => {
-                console.log("Position: ", pos.coords.latitude, ",", pos.coords.longitude);  //TODO: REMOVE
-            },
-            err => console.error("Unable to get the position - ", err));       //if cannot get location
-        }else {     //if geolocation is not available
-            console.error("Geolocation is not available");
-            return [0,0]
+            return Observable.create(observer => {
+                navigator.geolocation.getCurrentPosition(pos => {
+                    observer.next(pos)  
+             }),
+                 err => {
+                     return Observable.throw(err); //if cannot get location
+                }
+            });   
+        } else {     //if geolocation is not available
+            return Observable.throw("Geolocation is not available")
         }
     }
 

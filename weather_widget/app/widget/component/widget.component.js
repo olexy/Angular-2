@@ -13,10 +13,14 @@ var core_1 = require("@angular/core");
 var widget_service_1 = require("../service/widget.service");
 var WeatherComponent = (function () {
     function WeatherComponent(service) {
+        var _this = this;
         this.service = service;
-        this.service.getCurrentLocation();
-        this.service.getCurrentWeather(0, 0) //require subscription since its an observable method
-            .subscribe(function (weather) { return console.log(weather); }, function (err) { return console.error(err); });
+        this.service.getCurrentLocation()
+            .subscribe(function (position) {
+            _this.pos = position;
+            _this.service.getCurrentWeather(_this.pos.coords.latitude, _this.pos.coords.longitude) //require subscription since its an observable method
+                .subscribe(function (weather) { return console.log(weather); }, function (err) { return console.error(err); });
+        }, function (err) { return console.error(err); });
     }
     return WeatherComponent;
 }());
