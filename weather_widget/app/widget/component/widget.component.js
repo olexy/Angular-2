@@ -11,10 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var widget_service_1 = require("../service/widget.service");
+var weather_1 = require("../model/weather");
 var WeatherComponent = (function () {
     function WeatherComponent(service) {
         var _this = this;
         this.service = service;
+        this.weatherData = new weather_1.Weather(null, null, null, null, null); // new instance of weather class with null values
         this.service.getCurrentLocation()
             .subscribe(function (position) {
             _this.pos = position;

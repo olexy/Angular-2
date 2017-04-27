@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { WeatherService } from '../service/widget.service'
+import { Weather } from '../model/weather';
 
 @Component({
     moduleId:module.id,
@@ -12,6 +13,7 @@ import { WeatherService } from '../service/widget.service'
 
 export class WeatherComponent{
     pos: Position;
+    weatherData = new Weather(null, null, null, null, null);    // new instance of weather class with null values
 
     constructor(private service: WeatherService){               //constructor is used to create an instance of the component
         this.service.getCurrentLocation()
