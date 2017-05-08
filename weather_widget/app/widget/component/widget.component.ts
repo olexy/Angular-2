@@ -14,6 +14,7 @@ import { Weather } from '../model/weather';
 export class WeatherComponent implements OnInit{
     pos: Position;
     weatherData = new Weather(null, null, null, null, null);    // new instance of weather class with null values
+    currentSpeedUnit = "kph";
 
     constructor(private service: WeatherService){ }              //constructor is used to create an instance of the component
    
