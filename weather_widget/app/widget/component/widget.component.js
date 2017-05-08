@@ -17,6 +17,7 @@ var WeatherComponent = (function () {
         this.service = service;
         this.weatherData = new weather_1.Weather(null, null, null, null, null); // new instance of weather class with null values
         this.currentSpeedUnit = "kph";
+        this.currentTempUnit = "fahrenheit";
     } //constructor is used to create an instance of the component
     WeatherComponent.prototype.ngOnInit = function () {
         this.getCurrentLocation();
